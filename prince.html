@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prince Royeca- Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <video id="video-background" autoplay muted loop>
+    <source src="princebg.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="sidebar" id="sidebar">
+    <div class="profile">
+      <img src="images/p1.jpg" alt="Prince Royeca">
+      <h2>Prince Royeca</h2>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#services">Skills</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="index.html">Qpal</a></li>
+      </ul>
+    </nav>
+    <div class="social-links">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </div>
+
+  <button class="toggle-btn" id="toggle-btn">
+    <i class="fas fa-bars"></i>
+  </button>
+  
+
+<div class="main-content">
+  <section id="home" class="section highlight">
+    <h1 class="title">Welcome</h1>
+    <p class="subtitle">I'm a <span class="highlight-text">Freelancer</span> based in <span class="highlight-text">Philippines</span></p>
+    <div>
+      <h1> I mastered the following;  </h1>
+      <li class="service-item"><i class="fas fa-laptop-code"></i> Excel</li>
+      <li class="service-item"><i class="fas fa-laptop-code"></i> Powerpoint</li>
+      <li class="service-item"><i class="fas fa-laptop-code"></i> Microsoft Word</li>
+      <li class="service-item"><i class="fas fa-laptop-code"></i> Adobe Lightroom</li>
+    </div>
+    <a href="#contact" class="btn btn-primary">Appoint Me</a>
+  </section>
+
+  <section id="about" class="section">
+    <h2 class="section-title">About Me</h2>
+    <p class="description">Hello! I'm <span class="highlight-text">Prince Royeca</span>, a passionate Freelancer and Creative Designer based in the beautiful Philippines. Currently pursuing my studies at Universidad de Dagupan, I specialize in crafting innovative designs and building functional, user-friendly websites.
+
+      With a blend of creativity, technical expertise, and a knack for problem-solving, I’ve honed my skills in web design, data entry, and even machine learning. Whether I’m transforming ideas into reality through sleek designs or diving into data to uncover insights, my goal is to deliver solutions that inspire and empower.
+      
+      Outside of work, I’m an explorer of new tools and technologies, always curious about the latest trends in design and development. You’ll often find me experimenting with Adobe Lightroom to enhance visuals or perfecting my skills in Microsoft Office tools like Excel and PowerPoint to bring efficiency to every project.
+      
+      My mission is simple: to combine my passion for design and development with your vision, creating something truly impactful. Let’s collaborate and make something extraordinary together!
+      
+      📌 “Design is not just what it looks like and feels like. Design is how it works.” — Steve Jobspp      
+       <strong>designer</strong> and <strong>developer</strong>. I have a passion for creating <em>beautiful</em> and <em>functional</em> websites.</p>
+  </section>
+
+  <section id="services" class="section">
+    <h2 class="section-title">Skills</h2>
+    <ul class="services-list">
+      <li class="service-item"><i class="fas fa-laptop-code"></i> Web Designer</li>
+      <li class="service-item"><i class="fas fa-keyboard"></i> Data Entry</li>
+      <li class="service-item"><i class="fas fa-laptop-code"></i> Problem Solving Skills</li>
+      <li class="service-item"><i class="fas fa-laptop-code"></i> Machine Handling</li>
+      <li class="service-item"><i class="fas fa-laptop-code"></i> Machine Learning</li>
+    </ul>
+  </section>
+
+  <section id="portfolio">
+    <h2>Portfolio</h2>
+    <p>Here are some of my recent projects:</p>
+    <div class="portfolio-gallery">
+      <div class="portfolio-item">
+        <img src="images/project1.png" alt="Project 1">
+        <h3>Simple Calculator</h3>
+        <button onclick="window.open('https:')">View</button>
+      </div>
+      <div class="portfolio-item">
+        <img src="images/project2.png" alt="Project 2">
+        <h3>Log In Java</h3>
+        <button onclick="window.open('https:')">View</button>
+      </div>
+      <div class="portfolio-item">
+        <img src="images/project3.png" alt="Project 3">
+        <h3>Sign Up Form</h3>
+        <button onclick="window.open('https:')">View</button>
+      </div>
+      <div class="portfolio-item">
+        <img src="images/project4.jpg" alt="Project 4">
+        <h3>Figma</h3>
+        <button onclick="window.open('https:')">View</button>
+      </div>
+    </div>
+  </section>
+  
+  <section id="testimonials">
+      <h2>Testimonials</h2>
+      <blockquote>
+        "Prince is an exceptional designer! His creativity and dedication are unmatched." 
+      </blockquote>
+      <blockquote>
+        "He turned our vision into reality with a stunning website." 
+      </blockquote>
+  </section>
+  <div id="back-button-container">
+    <a href="/bagoto/webpage/web/webpage.html" class="back-button">
+      <i class="fas fa-arrow-left"></i> Back to Main Page
+    </a>
+  </div>
+
+  <section id="contact">
+      <h2>Contact Me</h2>
+      <form action="backend.php" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        
+        <button type="submit">Send Message</button>
+      </form>
+  </section>
+</div>
+  <script src="script.js"></script>
+
+
+</body>
+</html>

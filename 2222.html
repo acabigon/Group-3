@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>Portfolio Website</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            border: none;
+            outline: none;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, rgba(33, 24, 83, 0.319)); /* Gradient Background */
+            color: rgb(35, 6, 67);
+            font-family: 'Poppins', sans-serif;
+            position: relative;
+            z-index: 1;
+            padding-top: 80px; /* Prevents the fixed header from overlapping sections */
+        }
+
+        body {
+            background-image: url("and.jpg");  /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Keeps the background fixed when scrolling */
+        }
+
+        header {
+            margin-top: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1rem 9%;
+            background-color: transparent;
+            filter: drop-shadow(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 3rem;
+            color: violet;
+            font-weight: 800;
+            cursor: pointer;
+            transition: 0.5s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        nav a {
+            font-size: 1.8rem;
+            color: rgba(58, 11, 96, 0.152);
+            margin-left: 4rem;
+            font-weight: 500;
+            transition: 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: brown;
+            border-bottom: 3px solid brown;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 6rem 9%;
+            margin-top: 100px; /* Add top margin to avoid overlap with fixed header */
+            min-height: 80vh;
+        }
+
+        section h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        section p, section ul {
+            font-size: 1.8rem;
+            line-height: 1.6;
+        }
+
+        section ul {
+            list-style-type: none;
+            padding-left: 1.5rem;
+        }
+
+        section ul li {
+            margin-bottom: 1rem;
+        }
+
+        .home .home-content h1 {
+            font-size: 6rem;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        span {
+            color: violet;
+        }
+
+        .home-content h3 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .home-content p {
+            font-size: 1.6rem;
+        }
+
+        .home-img img {
+            position: relative;
+            width: 32vw;
+            border-radius: 50%;
+            box-shadow: 0 0 25px solid black;
+            cursor: pointer;
+            transition: 0.2s linear;
+        }
+
+        .home-img img:hover {
+            font-size: 1.8rem;
+            font-weight: 500;
+        }
+
+        /* Social Media Icons */
+        .social-icons a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 4rem;
+            height: 4rem;
+            background-color: transparent;
+            border: 0.2rem solid black;
+            font-size: 2rem;
+            border-radius: 50%;
+            margin: 3rem 1.5rem 3rem 0;
+            transition: 0.3s ease;
+            color: black;
+        }
+
+        .social-icons a:hover {
+            color: rgb(8, 8, 8);
+            transform: scale(1.3) translateY(-5px);
+            background-color: #fc0505;
+            box-shadow: 0  0 25px #fc0505;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.8rem;
+            background-color: black;
+            border-radius: 4rem;
+            font-size: 1.6rem;
+            color: #fc0505;
+            letter-spacing: 0.3rem;
+            font-weight: 600;
+            border: 2px solid #fc0505;
+            transition: 0.3s ease;
+            cursor: pointer;
+            margin-top: 3rem;
+        }
+
+        .btn:hover {
+            transform: scale3d(1.03);
+            background-color: #fc0505;
+            color: black;
+            box-shadow: 0 0 25px #fc0505;
+        }
+
+        /* Scroll Effects */
+        @media(max-width:995px) {
+            nav {
+                position: absolute;
+                display: none;
+                top: 0;
+                right: 0;
+                width: 40%;
+                border-left: 3px solid violet;
+                border-bottom: 3px solid ;
+                border-bottom-left-radius: 2rem;
+                padding: 1rem solid;
+                background-color: #161616;
+                border-top: 0.1rem solid rgba(0,0,0,0.1);
+            }
+            nav.active {
+                display: block;
+            }
+            nav a {
+                display: block;
+                font-size: 2rem;
+                margin: 3rem 0;
+            }
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 1000px) {
+            .home {
+                gap: 4rem;
+            }
+        }
+
+        @media(max-width:995px) {
+            .home {
+                flex-direction: column;
+                margin: 5rem 4rem;
+            }
+
+            .home .home-content h3 {
+                font-size: 2.5rem;
+            }
+
+            .home-content h1 {
+                font-size: 5rem;
+            }
+
+            .home-img img {
+                width: 70vw;
+                margin-top: 4rem;
+            }
+
+            section {
+                padding: 3rem 4%;
+            }
+
+            section h2 {
+                font-size: 2.5rem;
+            }
+
+            section p, section ul {
+                font-size: 1.4rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Andrea</a>
+        <nav>
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About Me</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    
+    <section id="home" class="home">
+        <div class="home-img">
+            <img src="andrea.jpg" alt="Andrea">
+        </div>
+        <div class="home-content">
+            <h1>Hi, It's me <span>Andrea</span></h1>
+            <h3 class="typing-text">This is my Webpage<span></span></h3>
+            <p>Student of Universidad de Dagupan, 2nd year Course of Bachelor of Science in Information Technology</p>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <a href="#" class="btn">Log In</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hello, I am Andrea 19, I am a passionate IT student, focusing on Web Development and Data Analysis.</p>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>Web Development</li>
+            <li>Data Analysis</li>
+            <li>Cloud Computing</li>
+            <li>Programming</li>
+            <li>Networking</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>You can reach me via email: cabigonandrea1@gmail.com</p>
+        <p>Just call me with this number: 09284833584</p>
+
+    </section>
+</body>
+</html>
+

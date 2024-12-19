@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group 3 Website</title>
+    <style>
+ body {
+    font-family: "Courier New", Courier, monospace;
+    background-color: #121212;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+}
+
+header {
+    background-color: #1a1a1a;
+    color: #76c7f4;
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 2rem;
+    border-bottom: 2px solid #76c7f4;
+    animation: typing 3s steps(30, end), blink 0.5s step-end infinite alternate;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.view-button {
+    background-color: #76c7f4;
+    color: #121212;
+    border: none;
+    border-radius: 0.3rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 1rem;
+}
+
+.view-button:hover {
+    background-color: #ffffff;
+    color: #76c7f4;
+    transform: scale(1.05);
+}
+
+.view-button:active {
+    transform: scale(0.95);
+}
+
+h1 {
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 2.5rem;
+    color: #76c7f4;
+}
+
+.grid-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 2rem auto;
+    width: 90%;
+    max-width: 800px;
+}
+
+.grid-item {
+    display: flex;
+    align-items: center;
+    background: #2c2c2c;
+    border: 2px solid #76c7f4;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 10px rgba(118, 199, 244, 0.8);
+    animation: neon-glow 1.5s infinite alternate;
+}
+
+@keyframes neon-glow {
+    0% {
+        box-shadow: 0 0 5px rgba(118, 199, 244, 0.8), 0 0 15px rgba(118, 199, 244, 0.8), 0 0 30px rgba(118, 199, 244, 0.8);
+        text-shadow: 0 0 5px rgba(118, 199, 244, 0.8), 0 0 15px rgba(118, 199, 244, 0.8), 0 0 30px rgba(118, 199, 244, 0.8);
+    }
+    50% {
+        box-shadow: 0 0 10px rgba(118, 199, 244, 1), 0 0 20px rgba(118, 199, 244, 1), 0 0 40px rgba(118, 199, 244, 1);
+        text-shadow: 0 0 10px rgba(118, 199, 244, 1), 0 0 20px rgba(118, 199, 244, 1), 0 0 40px rgba(118, 199, 244, 1);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(118, 199, 244, 0.8), 0 0 15px rgba(118, 199, 244, 0.8), 0 0 30px rgba(118, 199, 244, 0.8);
+        text-shadow: 0 0 5px rgba(118, 199, 244, 0.8), 0 0 15px rgba(118, 199, 244, 0.8), 0 0 30px rgba(118, 199, 244, 0.8);
+    }
+}
+
+.grid-item:hover {
+    background: #444444;
+    transform: scale(1.03);
+    box-shadow: 0 0 20px rgba(118, 199, 244, 1);
+}
+
+.profile-icon {
+    width: 80px;
+    height: 80px;
+    background-color: #76c7f4;
+    border-radius: 50%;
+    margin-right: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #121212;
+    font-weight: bold;
+    font-size: 1.5rem;
+    overflow: hidden; 
+}
+
+.profile-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.profile-name {
+    font-size: 1.5rem;
+    color: #76c7f4;
+}
+
+.profile-name a {
+    text-decoration: none;
+    color: #76c7f4;
+    transition: text-shadow 0.3s;
+}
+
+.profile-name a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.description {
+    font-size: 1rem;
+    color: #e0e0e0;
+    margin-left: 1rem;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #1a1a1a;
+    border-top: 2px solid #76c7f4;
+    color: #76c7f4;
+}
+
+@keyframes flicker {
+    0% { opacity: 1; }
+    50% { opacity: 0.8; }
+    100% { opacity: 1; }
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+.flicker-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.flicker-active {
+    animation: flicker 0.2s infinite;
+}
+
+#video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+    </style>
+</head>
+<body>
+    <video id="video-background" autoplay muted loop>
+        <source src="background-video.mp4.mp4" type="video/mp4">
+    </video>
+
+    <header>Group 3 Platform Technologies</header>
+    <h1>Group 3</h1>
+    <div class="grid-container">
+        <div class="grid-item">
+            <div class="profile-icon">
+                <img src="me.jpg" alt="Rafh">
+            </div>
+            <div>
+                <div class="profile-name">
+                    <a href="basa.html" onclick="applyFlicker(event, 'basa.html')">Rafh</a>
+                </div>
+                <p class="description">Rafh is a cyber strategist specializing in hacking solutions and cybersecurity innovations.</p>
+                <button class="view-button" onclick="applyFlicker(event, 'basa.html')">View</button>
+            </div>
+        </div>
+        <div class="grid-item">
+            <div class="profile-icon">
+                <img src="andrea.jpg" alt="Andrea">
+            </div>
+            <div>
+                <div class="profile-name">
+                    <a href="andrea.html" onclick="applyFlicker(event, 'andrea.html')">Andrea</a>
+                </div>
+                <p class="description">Andrea is the designer of visual algorithms that confuse AI and captivate users alike.</p>
+                <button class="view-button" onclick="applyFlicker(event, 'andrea.html')">View</button>
+            </div>
+        </div>
+        <div class="grid-item">
+            <div class="profile-icon">
+                <img src="thea.jpg" alt="Thea">
+            </div>
+            <div>
+                <div class="profile-name">
+                    <a href="thea.html" onclick="applyFlicker(event, 'thea.html')">Thea</a>
+                </div>
+                <p class="description">Thea is our backend sorcerer, crafting efficient systems that break barriers.</p>
+                <button class="view-button" onclick="applyFlicker(event, 'thea.html')">View</button>
+            </div>
+        </div>
+        <div class="grid-item">
+            <div class="profile-icon">
+                <img src="images/p1.jpg" alt="Prince">
+            </div>
+            <div>
+                <div class="profile-name">
+                    <a href="prince.html" onclick="applyFlicker(event, 'prince.html')">Prince</a>
+                </div>
+                <p class="description">Prince ensures every line of code meets the impossible standards of perfection.</p>
+                <button class="view-button" onclick="applyFlicker(event, 'prince.html')">View</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="flicker-overlay" id="flicker-overlay"></div>
+
+    <footer>
+        &copy; Group 3 Platform Technologies | All Rights Reserved
+    </footer>
+
+    <script>
+        function applyFlicker(event, url) {
+            event.preventDefault();
+            const overlay = document.getElementById('flicker-overlay');
+            overlay.classList.add('flicker-active');
+            
+            setTimeout(() => {
+                overlay.classList.remove('flicker-active');
+                window.location.href = url;
+            }, 700);
+        }
+    </script>
+</body>
+</html>
